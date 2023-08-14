@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+ 
+{% block title %}Criar Cliente{% endblock %}
+
+
+{% block body %}
+
+    <h1>
+        Cadastro de clinte
+    </h1>
+    <form method="post" action="">{% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Criar">
+        {% url 'exemplo:list' as exemplo_list_url %}
+        <input type="reset" value="Cancelar" onclick="location.href = '{{exemplo_list_url}}'">
+    </form>
+
+{% endblock %}

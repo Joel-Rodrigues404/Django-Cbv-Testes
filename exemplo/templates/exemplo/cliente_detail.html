@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+ 
+{% block title %}{{cliente}}{% endblock %}
+
+
+{% block body %}
+    {% url 'exemplo:list' as exemplo_list %}
+    <input type="submit" onclick="location.href = '{{exemplo_list}}'" value="Voltar para a lista">
+    <br>
+    nome: {{object.nome}}
+    <br>
+    idade {{object.idade}}
+
+{% endblock %}
