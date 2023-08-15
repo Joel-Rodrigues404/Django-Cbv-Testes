@@ -33,4 +33,3 @@ class ClienteDetail(DetailView):
 class ClienteDelete(DeleteView):
     queryset = Cliente.objects.all()
     success_url = reverse_lazy('exemplo:list')
-
