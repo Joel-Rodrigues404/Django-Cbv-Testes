@@ -4,11 +4,13 @@ from django.views.generic import (
     ListView, CreateView, UpdateView, DetailView, DeleteView, View
 )
 from .models import Cliente
+
 # Create your views here.
 
 #procura numa pasta com nome da app um arquivo com nome modelo + _list.html no caso seria cliente_list.html
 class ClienteList(ListView):
     model = Cliente
+    paginate_by = 1
     queryset = Cliente.objects.all()
 
 #procura numa pasta com nome da app um arquivo com nome modelo + _form.html no caso seria cliente_form.html
@@ -31,3 +33,7 @@ class ClienteDetail(DetailView):
 class ClienteDelete(DeleteView):
     queryset = Cliente.objects.all()
     success_url = reverse_lazy('exemplo:list')
+
+class viewss(View):
+    def get(self, request):
+        return ...
