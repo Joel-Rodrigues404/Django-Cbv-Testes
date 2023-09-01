@@ -1,9 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import (
+    render, redirect
+)
 from django.urls import reverse_lazy
 from django.views.generic import (
     ListView, CreateView, UpdateView, DetailView, DeleteView, View
 )
-from .models import Cliente
+from exemplo.models import Cliente
 
 # Create your views here.
 
@@ -35,5 +37,6 @@ class ClienteDelete(DeleteView):
     success_url = reverse_lazy('exemplo:list')
 
 class MyView(View):
-    def get(self, request):
-        return ...
+    
+    def post(self, request):
+        return redirect("exemplo list")
