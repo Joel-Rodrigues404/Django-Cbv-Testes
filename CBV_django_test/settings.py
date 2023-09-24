@@ -97,6 +97,17 @@ WSGI_APPLICATION = 'CBV_django_test.wsgi.application'
 #     }
 # }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'tagQROnlxX74',
+        'HOST': 'ep-withered-voice-60355093-pooler.us-east-1.postgres.vercel-storage.com',
+        'PORT': '5432',
+    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
