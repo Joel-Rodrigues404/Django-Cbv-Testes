@@ -109,6 +109,14 @@ DATABASES = {
 }
 
 
+POSTGRES_URL="postgres://default:aN7Mjfp8bmwT@ep-floral-mud-04476281-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb"
+POSTGRES_PRISMA_URL="postgres://default:aN7Mjfp8bmwT@ep-floral-mud-04476281-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb?pgbouncer=true&connect_timeout=15"
+POSTGRES_URL_NON_POOLING="postgres://default:aN7Mjfp8bmwT@ep-floral-mud-04476281.us-east-1.postgres.vercel-storage.com:5432/verceldb"
+POSTGRES_USER="default"
+POSTGRES_HOST="ep-floral-mud-04476281-pooler.us-east-1.postgres.vercel-storage.com"
+POSTGRES_PASSWORD="aN7Mjfp8bmwT"
+POSTGRES_DATABASE="verceldb"
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
