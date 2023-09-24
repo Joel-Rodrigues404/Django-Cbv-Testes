@@ -100,7 +100,7 @@ WSGI_APPLICATION = 'CBV_django_test.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'verceldb',
+        'NAME': 'django-cbv-testes-deplo-postgres',
         'USER': 'default',
         'PASSWORD': 'tagQROnlxX74',
         'HOST': 'ep-withered-voice-60355093-pooler.us-east-1.postgres.vercel-storage.com',
