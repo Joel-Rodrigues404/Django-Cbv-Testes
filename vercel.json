@@ -1,14 +1,22 @@
 {
-    "builds": [{
-        "src": "CBV_django_test/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3" }
-    },
-    {
-        "src": "build_files.sh",
-        "use": "@vercel/static-build",
-        "config": { "distDir": "staticfiles_build" }
-    }],
+    "version": 2,
+    "builds": [
+        {
+            "src": "CBV_django_test/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "15mb",
+                "runtime": "python3"
+            }
+        },
+        {
+            "src": "build.sh",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "staticfiles_build"
+            }
+        }
+    ],
     "routes": [
         {
             "src": "/static/(.*)",
@@ -16,7 +24,7 @@
         },
         {
             "src": "/(.*)",
-            "dest": "CBV_django_test/wsgi.py"
+            "dest": "/CBV_django_test/wsgi.py"
         }
     ]
 }

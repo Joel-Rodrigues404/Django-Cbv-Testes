@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path, os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
+import dj_database_url
+from decouple import config
 
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -90,32 +91,26 @@ WSGI_APPLICATION = 'CBV_django_test.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'verceldb',
-        'USER': 'default',
-        'PASSWORD': 'aN7Mjfp8bmwT',
-        'HOST': 'ep-floral-mud-04476281-pooler.us-east-1.postgres.vercel-storage.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'] = dj_database_url.config()
 
-POSTGRES_URL="postgres://default:aN7Mjfp8bmwT@ep-floral-mud-04476281-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb"
-POSTGRES_PRISMA_URL="postgres://default:aN7Mjfp8bmwT@ep-floral-mud-04476281-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb?pgbouncer=true&connect_timeout=15"
-POSTGRES_URL_NON_POOLING="postgres://default:aN7Mjfp8bmwT@ep-floral-mud-04476281.us-east-1.postgres.vercel-storage.com:5432/verceldb"
-POSTGRES_USER="default"
-POSTGRES_HOST="ep-floral-mud-04476281-pooler.us-east-1.postgres.vercel-storage.com"
-POSTGRES_PASSWORD="aN7Mjfp8bmwT"
-POSTGRES_DATABASE="verceldb"
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'verceldb',
+#         'USER': 'default',
+#         'PASSWORD': 'aN7Mjfp8bmwT',
+#         'HOST': 'ep-floral-mud-04476281-pooler.us-east-1.postgres.vercel-storage.com',
+#         'PORT': '5432',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -155,10 +150,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = BASE_DIR / 'staticfiles_build' / 'static'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # Default primary key field type
