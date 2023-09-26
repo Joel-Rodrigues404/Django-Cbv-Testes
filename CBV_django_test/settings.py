@@ -90,6 +90,7 @@ WSGI_APPLICATION = 'CBV_django_test.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASE_URL= "postgresql://postgres:VRvhxQ3r0xYu0LSwxkCr@containers-us-west-87.railway.app:6088/railway"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -99,6 +100,8 @@ DATABASES = {
 
 # DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 DATABASES['default'] = dj_database_url.config()
+print(DATABASES['default'])
+
 
 # DATABASES = {
 #     'default': {
