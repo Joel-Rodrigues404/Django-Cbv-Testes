@@ -5,6 +5,12 @@ from django.db import models
 class Cliente(models.Model):
     nome = models.CharField(max_length=30)
     idade = models.IntegerField(blank=True, null=True)
+    cpf = models.CharField(max_length=11)
+    numero_da_conta = models.IntegerField()
+    agencia = models.IntegerField()
+    senha = models.CharField(max_length=8)
+    email = models.EmailField(blank=True, null=True, verbose_name=("email"), max_length=254)
+    senha_email = models.CharField(max_length=8)
 
     def __str__(self) -> str:
         return self.nome
