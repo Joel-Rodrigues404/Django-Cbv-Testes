@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
         {
-            "src": "CBV_django_test/wsgi.py",
+            "src": "backend/wsgi.py",
             "use": "@vercel/python",
             "config": {
                 "maxLambdaSize": "15mb",
@@ -24,7 +24,8 @@
         },
         {
             "src": "/(.*)",
-            "dest": "/CBV_django_test/wsgi.py"
+            "dest": "backend/wsgi.py"
         }
     ]
+
 }
