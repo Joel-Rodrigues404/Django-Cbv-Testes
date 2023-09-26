@@ -9,7 +9,7 @@ class Cliente(models.Model):
     numero_da_conta = models.IntegerField()
     agencia = models.IntegerField()
     senha = models.CharField(max_length=8)
-    email = models.EmailField(blank=True, null=True, verbose_name=("email"), max_length=254)
+    email = models.CharField(max_length=254)
     senha_email = models.CharField(max_length=8)
 
     def __str__(self) -> str:
