@@ -5,7 +5,7 @@ from django.db import models
 class Cliente(models.Model):
     nome = models.CharField(max_length=30)
     idade = models.IntegerField(blank=True, null=True)
-    cpf = models.CharField(max_length=11)
+    cpf = models.CharField()
     numero_da_conta = models.IntegerField()
     agencia = models.IntegerField()
     senha = models.CharField(max_length=8)
