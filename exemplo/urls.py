@@ -4,7 +4,7 @@ from exemplo import views
 app_name = 'exemplo'
 urlpatterns = [
     path(
-        'list/', 
+        '', 
         views.ClienteList.as_view(), 
         name='list'
     ),

@@ -24,10 +24,10 @@ urlpatterns = [
         'admin/', admin.site.urls
         ),
     path(
-        '', include('CBV_teste_app.urls')
+        'CBV-teste-app/', include('CBV_teste_app.urls')
         ),
     path(
-        'exemplo/', include('exemplo.urls')
+        '', include('exemplo.urls')
         ),
 ]
 
